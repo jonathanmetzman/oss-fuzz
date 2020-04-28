@@ -317,7 +317,6 @@ class CheckFuzzerBuildUnitTest(unittest.TestCase):
     """Checks a directory that exists but does not have fuzzers is False."""
     self.assertFalse(cifuzz.check_fuzzer_build(TEST_FILES_PATH))
 
-  # TODO(metzman): Make it easier to patch environ without thinking about it.
   @mock.patch.dict(os.environ, {'ALLOWED_BROKEN_TARGETS_PERCENTAGE': '0'})
   @mock.patch('helper.docker_run')
   def test_allow_broken_fuzz_targets_percentage(self, mocked_docker_run):
