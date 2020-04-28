@@ -326,9 +326,8 @@ class CheckFuzzerBuildUnitTest(unittest.TestCase):
     test_fuzzer_dir = os.path.join(TEST_FILES_PATH, 'out')
     mocked_docker_run.return_value = 0
     cifuzz.check_fuzzer_build(test_fuzzer_dir)
-    self.assertIn(
-        '-e ALLOWED_BROKEN_TARGETS_PERCENTAGE=0',
-        ' '.join(mocked_docker_run.call_args[0][0]))
+    self.assertIn('-e ALLOWED_BROKEN_TARGETS_PERCENTAGE=0',
+                  ' '.join(mocked_docker_run.call_args[0][0]))
 
 
 class GetFilesCoveredByTargetUnitTest(unittest.TestCase):
