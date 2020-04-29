@@ -217,7 +217,7 @@ class FuzzTarget:
 
     oss_fuzz_build_dir = self.download_oss_fuzz_build()
     if not oss_fuzz_build_dir:
-      return False
+      return True
 
     reproducible_in_oss_fuzz = self.is_reproducible(test_case,
                                                     oss_fuzz_build_dir)
