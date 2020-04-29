@@ -574,6 +574,7 @@ def check_build(args):
   else:
     run_args.append('test_all')
 
+  print(run_args)
   exit_code = docker_run(run_args)
   if exit_code == 0:
     print('Check build passed.')

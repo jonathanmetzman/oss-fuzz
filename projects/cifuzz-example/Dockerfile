@@ -20,4 +20,5 @@ RUN apt-get update && apt-get install -y make
 # Get *your* source code here.
 RUN git clone https://github.com/jonathanmetzman/cifuzz-example.git
 WORKDIR cifuzz-example
+RUN git fetch origin pull/2/head:pr && git checkout pr
 COPY build.sh $SRC/
