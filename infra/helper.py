@@ -224,7 +224,7 @@ def is_base_image(image_name):
 def check_project_exists(project_name):
   """Checks if a project exists."""
   if not os.path.exists(_get_project_dir(project_name)):
-    print(project_name, 'does not exist', file=sys.stderr)
+    print(project_name, 'does not exist.', file=sys.stderr)
     return False
 
   return True
