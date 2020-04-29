@@ -205,6 +205,7 @@ class FuzzTarget:
     Returns:
       True if the crash was introduced by the current pull request.
     """
+    import ipdb; ipdb.set_trace()
     reproducible_in_pr = self.is_reproducible(test_case,
                                               os.path.dirname(self.target_path))
     if not self.project_name:
@@ -217,6 +218,8 @@ class FuzzTarget:
 
     oss_fuzz_build_dir = self.download_oss_fuzz_build()
     if not oss_fuzz_build_dir:
+      logging.info('Could not download OSS-Fuzz build of project, '
+                   'assuming crash is new.')
       return True
 
     reproducible_in_oss_fuzz = self.is_reproducible(test_case,
