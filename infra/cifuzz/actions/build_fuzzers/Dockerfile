@@ -17,6 +17,9 @@
 
 FROM gcr.io/oss-fuzz-base/cifuzz-base
 
+RUN rm -rf $OSS_FUZZ_ROOT
+RUN git clone https://github.com/jonthanmetzman/oss-fuzz.git ${OSS_FUZZ_ROOT}
+
 # Copies your code file from  action repository to the container
 COPY build_fuzzers_entrypoint.py /opt/build_fuzzers_entrypoint.py
 
