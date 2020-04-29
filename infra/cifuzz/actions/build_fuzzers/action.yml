@@ -8,6 +8,9 @@ inputs:
   dry-run:
     description: 'If set, run the action without actually reporting a failure.'
     default: false
+  allowed_broken_targets_percentage:
+    description: 'Name of the corresponding OSS-Fuzz project.'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
