@@ -142,6 +142,7 @@ def build_fuzzers(project_name,
   ]
 
   # Set ALLOWED_BROKEN_TARGETS_PERCENTAGE in docker if specified by user.
+  print(os.environ)
   allowed_broken_targets_percentage = os.getenv(
       'ALLOWED_BROKEN_TARGETS_PERCENTAGE')
   print('allowed_broken_targets_percentage', allowed_broken_targets_percentage)

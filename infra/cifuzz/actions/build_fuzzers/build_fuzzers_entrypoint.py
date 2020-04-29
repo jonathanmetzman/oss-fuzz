@@ -48,6 +48,8 @@ def main():
     0 on success or 1 on Failure.
   """
   oss_fuzz_project_name = os.environ.get('OSS_FUZZ_PROJECT_NAME')
+  allowed_broken_targets_percentage = os.environ.get('ALLOWED_BROKEN_TARGETS_PERCENTAGE')
+  print('running build_fuzzers_entrypoint', allowed_broken_targets_percentage, os.environ)
   github_repo_name = os.path.basename(os.environ.get('GITHUB_REPOSITORY'))
   pr_ref = os.environ.get('GITHUB_REF')
   commit_sha = os.environ.get('GITHUB_SHA')
