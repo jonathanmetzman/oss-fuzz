@@ -217,9 +217,7 @@ class FuzzTarget:
 
     oss_fuzz_build_dir = self.download_oss_fuzz_build()
     if not oss_fuzz_build_dir:
-      logging.info('Could not download OSS-Fuzz build of project, '
-                   'assuming crash is new.')
-      return True
+      return False
 
     reproducible_in_oss_fuzz = self.is_reproducible(test_case,
                                                     oss_fuzz_build_dir)

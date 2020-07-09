@@ -224,7 +224,7 @@ def is_base_image(image_name):
 def check_project_exists(project_name):
   """Checks if a project exists."""
   if not os.path.exists(_get_project_dir(project_name)):
-    print(project_name, 'does not exist.', file=sys.stderr)
+    print(project_name, 'does not exist', file=sys.stderr)
     return False
 
   return True
@@ -574,7 +574,6 @@ def check_build(args):
   else:
     run_args.append('test_all')
 
-  print(run_args)
   exit_code = docker_run(run_args)
   if exit_code == 0:
     print('Check build passed.')

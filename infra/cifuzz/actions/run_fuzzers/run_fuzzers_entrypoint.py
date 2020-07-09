@@ -83,7 +83,6 @@ def main():
     logging.info('Bug found.')
     if not dry_run:
       # Return 2 when a bug was found by a fuzzer causing the CI to fail.
-      print(os.listdir('./out/artifacts'))
       return 2
   return 0
 
